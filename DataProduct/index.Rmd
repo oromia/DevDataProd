@@ -21,6 +21,8 @@ Shiny makes it easy to build interactive web applications with R.
 
 We compare children's height and their parents heights using Galtons data from 'UsingR' package.
 
+You will get to find a Line that minimizes the mean squared error (mes) in predicting if parents height have effect on child's height.
+
 ---
 
 ## 3. Data
@@ -37,4 +39,35 @@ summary(galton)
 
 ## 4. Code
 
-Code for this presentation is available on [Github](https://github.com/coursera-student/coursera_slidify)
+Code for this presentation is available on [Github Repository](https://github.com/oromia/DevDataProd)
+
+---
+
+## 5. MSE Calculation
+
+code used to calculate MSE and draw plot
+beta is user's input (here we set it to .82)
+```{r, echo=FALSE, fig.height=4}
+beta <- 0.82
+data(galton)
+y <- galton$child - mean(galton$child)
+x <- galton$parent - mean(galton$parent)
+
+freqData <- as.data.frame(table(x,y))
+names(freqData) <- c("child", "parent", "freq")
+
+plot(    as.numeric(as.vector(freqData$parent))
+         , as.numeric(as.vector(freqData$child))
+         , pch = 21
+         , col = "black"
+         , bg = "yellow"
+         , cex = .15 * freqData$freq 
+         , xlab = "Parents"
+         , ylab = "Chlidren"
+)
+abline(0, beta,lwd = 3, col="blue")
+points(0,0, cex = 2, pch = 19, col="red")
+mse <- mean( (y - beta * x)^2  )
+ttl <- paste( "mse = ", round(mse,3), "  ")
+title( ttl, col="red")
+```

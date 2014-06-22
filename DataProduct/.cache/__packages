@@ -1,12 +1,7 @@
 base
-datasets
 devtools
-graphics
-grDevices
 knitr
 MASS
-methods
+shiny
 slidify
-stats
 UsingR
-utils
