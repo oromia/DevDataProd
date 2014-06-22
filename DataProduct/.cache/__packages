@@ -1,0 +1,12 @@
+base
+datasets
+devtools
+graphics
+grDevices
+knitr
+MASS
+methods
+slidify
+stats
+UsingR
+utils

@@ -1,0 +1,40 @@
+---
+title       : Developing Data Products Shiny
+subtitle    : Regression Through Origin
+author      : Coursera Data Science Project
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+## 1. Developing Data Products
+
+We will develop a Data Product using Shiny R package.
+Shiny makes it easy to build interactive web applications with R. 
+
+--- .class #id 
+
+## 2. Data Source
+
+We compare children's height and their parents heights using Galtons data from 'UsingR' package.
+
+---
+
+## 3. Data
+
+Hear is head of data used. We are interested in child and parent height.
+```{r }
+library(UsingR)
+data(galton)
+summary(galton)
+```
+
+---
+  
+
+## 4. Code
+
+Code for this presentation is available on [Github](https://github.com/coursera-student/coursera_slidify)
